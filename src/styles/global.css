@@ -1,12 +1,10 @@
 :root {
-  --bg: #0a0a0a;
+  --bg: #070707;
   --fg: #e8e8e8;
   --muted: #7a7a7a;
-  --accent: #b0b0b0;
   --focus: #e8e8e8;
-  --column-max: 42rem;
-  --font-mono: "Cascadia Code Variable", ui-monospace, "SF Mono", Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --column-max: 41.5rem;
+  --font-mono: var(--font-cascadia);
 }
 
 *,
@@ -25,8 +23,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,9 +34,12 @@ body {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
   max-width: var(--column-max);
   margin-inline: auto;
-  padding: 2rem 1.25rem 4rem;
+  padding: 2.5rem 1.25rem 5rem;
 }
 
 .header {
@@ -47,9 +48,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.25rem 1.5rem;
-  margin-bottom: 3rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid #222;
+  margin-bottom: 3.5rem;
 }
 
 .brand {
@@ -71,12 +70,7 @@ body {
 }
 
 .tablist a {
-  font: inherit;
   color: var(--muted);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
@@ -88,26 +82,6 @@ body {
 .tablist a[aria-current="page"] {
   color: var(--fg);
   border-bottom-color: var(--fg);
-}
-
-.resume-link {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.resume-link:hover,
-.resume-link:focus-visible {
-  color: var(--fg);
-}
-
-.resume-link .arrow {
-  display: inline-block;
-  margin-left: 0.15em;
-  transition: transform 0.15s ease;
-}
-
-.resume-link:hover .arrow {
-  transform: translate(1px, -1px);
 }
 
 .socials {
@@ -133,26 +107,13 @@ body {
   fill: currentColor;
 }
 
-main {
-  min-height: 12rem;
-}
-
-.section-label {
-  margin: 0 0 1.75rem;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: lowercase;
-  color: var(--accent);
-}
-
 .jobs {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
+  gap: 2.5rem;
 }
 
 .job-title {
@@ -170,12 +131,11 @@ main {
 
 .about-text {
   margin: 0;
-  max-width: 36rem;
   color: var(--muted);
 }
 
 .about-text p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   text-wrap: pretty;
 }
 
@@ -191,9 +151,5 @@ main {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .resume-link .arrow {
-    transition: none;
   }
 }
