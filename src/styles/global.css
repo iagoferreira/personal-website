@@ -3,7 +3,9 @@
   --fg: #e8e8e8;
   --muted: #7a7a7a;
   --focus: #e8e8e8;
-  --column-max: 41.5rem;
+  --column-max: 28rem;
+  --text-max: 26rem;
+  --frame-max: 48rem;
   --font-mono: var(--font-cascadia);
 }
 
@@ -38,8 +40,13 @@ body {
   flex-direction: column;
   min-height: 100svh;
   max-width: var(--column-max);
-  margin-inline: auto;
-  padding: 2.5rem 1.25rem 5rem;
+  /* Left edge of a centered frame: content stays left-aligned but sits near the middle */
+  margin-left: max(0rem, (100% - var(--frame-max)) / 2);
+  padding: 6rem 2rem 5rem;
+}
+
+main {
+  max-width: var(--text-max);
 }
 
 .header {
@@ -54,6 +61,7 @@ body {
 .brand {
   color: var(--fg);
   letter-spacing: -0.02em;
+  text-decoration: none;
 }
 
 .header-right {

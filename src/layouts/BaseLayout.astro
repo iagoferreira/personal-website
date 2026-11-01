@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 
@@ -11,7 +12,7 @@ const { title = "iago" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,6 +24,7 @@ const { title = "iago" } = Astro.props;
     <meta name="theme-color" content="#070707" />
     <Font cssVariable="--font-cascadia" preload />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <ClientRouter />
   </head>
   <body>
     <div id="bg" class="page-shell">

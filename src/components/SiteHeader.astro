@@ -1,6 +1,7 @@
 ---
 function normalizePathname(pathname: string) {
-  let p = pathname;
+  // build.format "file" renders pages as /index.html, /work.html
+  let p = pathname.replace(/\.html$/, "").replace(/\/index$/, "/");
   if (p.length > 1 && p.endsWith("/")) {
     p = p.slice(0, -1);
   }
@@ -13,7 +14,7 @@ const isWork = path === "/work";
 ---
 
 <header class="header">
-  <span class="brand">iago ferreira</span>
+  <a class="brand" href="/">iago</a>
   <div class="header-right">
     <nav class="tablist" aria-label="sections">
       <a href="/" aria-current={isAbout ? "page" : undefined}>about</a>
