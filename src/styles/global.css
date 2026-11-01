@@ -3,7 +3,8 @@
   --fg: #e8e8e8;
   --muted: #7a7a7a;
   --focus: #e8e8e8;
-  --column-max: 41.5rem;
+  --column-max: 28rem;
+  --text-max: 26rem;
   --font-mono: var(--font-cascadia);
 }
 
@@ -38,8 +39,13 @@ body {
   flex-direction: column;
   min-height: 100svh;
   max-width: var(--column-max);
-  margin-inline: auto;
-  padding: 2.5rem 1.25rem 5rem;
+  /* Left-aligned column, offset from the edge on wider screens */
+  margin-left: clamp(0rem, 12vw - 3rem, 5rem);
+  padding: 2.5rem 2rem 5rem;
+}
+
+main {
+  max-width: var(--text-max);
 }
 
 .header {
@@ -54,6 +60,7 @@ body {
 .brand {
   color: var(--fg);
   letter-spacing: -0.02em;
+  text-decoration: none;
 }
 
 .header-right {
