@@ -5,6 +5,7 @@
   --focus: #e8e8e8;
   --column-max: 28rem;
   --text-max: 26rem;
+  --frame-max: 48rem;
   --font-mono: var(--font-cascadia);
 }
 
@@ -39,9 +40,9 @@ body {
   flex-direction: column;
   min-height: 100svh;
   max-width: var(--column-max);
-  /* Left-aligned column, offset from the edge on wider screens */
-  margin-left: clamp(0rem, 12vw - 3rem, 5rem);
-  padding: 2.5rem 2rem 5rem;
+  /* Left edge of a centered frame: content stays left-aligned but sits near the middle */
+  margin-left: max(0rem, (100% - var(--frame-max)) / 2);
+  padding: 6rem 2rem 5rem;
 }
 
 main {
